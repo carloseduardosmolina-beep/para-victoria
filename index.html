@@ -9,16 +9,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --rosa:#e8618c; --rosa2:#ff9ebb; --crema:#fff6f8; --vino:#7a1f3d; --oro:#d9a441;
-  --texto:#3b2a31; --card:#ffffffd9; --sombra:0 10px 30px rgba(232,97,140,.18);
+  --rosa:#6b7280; --rosa2:#a0a7b4; --crema:#f4f5f7; --vino:#2b303a; --oro:#9aa0aa;
+  --texto:#3b2a31; --card:#ffffffd9; --sombra:0 10px 30px rgba(40,45,55,.15);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Poppins',sans-serif;color:var(--texto);background:linear-gradient(160deg,#fff0f5,#ffe3ec 45%,#fdf2ff);min-height:100vh;overflow-x:hidden}
+body{font-family:'Poppins',sans-serif;color:var(--texto);background:linear-gradient(160deg,#eceef1,#dcdfe4 45%,#e9eaee);min-height:100vh;overflow-x:hidden}
 h1,h2,h3{font-family:'Dancing Script',cursive;color:var(--vino)}
 h2{font-size:2.6rem;text-align:center;margin-bottom:.4rem}
-.sub{text-align:center;color:#8a6a75;margin-bottom:2rem}
-header{position:sticky;top:0;z-index:50;background:#fffafcee;backdrop-filter:blur(10px);box-shadow:0 2px 14px rgba(0,0,0,.06)}
+.sub{text-align:center;color:#6c717c;margin-bottom:2rem}
+header{position:sticky;top:0;z-index:50;background:#f7f8f9ee;backdrop-filter:blur(10px);box-shadow:0 2px 14px rgba(0,0,0,.06)}
 .brand{text-align:center;font-family:'Dancing Script',cursive;font-size:1.9rem;color:var(--rosa);padding:.5rem 0 0}
 nav{display:flex;gap:.4rem;overflow-x:auto;padding:.5rem .8rem .7rem;scrollbar-width:none;justify-content:flex-start}
 @media(min-width:1100px){nav{justify-content:center}}
@@ -35,13 +35,13 @@ main{max-width:1100px;margin:0 auto;padding:2rem 1.1rem 4rem}
 /* HERO */
 .hero{text-align:center;padding:3rem 1rem 2rem}
 .hero .big{font-family:'Dancing Script';font-size:clamp(3.4rem,13vw,7rem);background:linear-gradient(135deg,var(--rosa),var(--vino));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
-.hero p{max-width:620px;margin:1.2rem auto;font-size:1.1rem;color:#6b4a56}
+.hero p{max-width:620px;margin:1.2rem auto;font-size:1.1rem;color:#4d525c}
 .btn{display:inline-block;border:none;cursor:pointer;background:linear-gradient(135deg,var(--rosa),var(--rosa2));color:#fff;padding:.8rem 1.6rem;border-radius:999px;font:500 1rem 'Poppins';box-shadow:var(--sombra);transition:.25s;margin:.3rem}
 .btn:hover{transform:scale(1.05)}
 .counter{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem}
 .counter div{background:#fff;border-radius:16px;padding:.9rem 1.1rem;min-width:84px;box-shadow:var(--sombra)}
 .counter b{display:block;font-size:1.9rem;color:var(--rosa)}
-.counter span{font-size:.75rem;color:#8a6a75;text-transform:uppercase;letter-spacing:1px}
+.counter span{font-size:.75rem;color:#6c717c;text-transform:uppercase;letter-spacing:1px}
 /* TIMELINE */
 .timeline{position:relative;max-width:760px;margin:auto;padding-left:30px}
 .timeline:before{content:"";position:absolute;left:8px;top:0;bottom:0;width:3px;background:linear-gradient(var(--rosa),var(--rosa2));border-radius:3px}
@@ -51,7 +51,7 @@ main{max-width:1100px;margin:0 auto;padding:2rem 1.1rem 4rem}
 .t-item h3{font-size:1.7rem}
 /* LISTAS */
 .lista{list-style:none}
-.lista li{padding:.7rem .4rem;border-bottom:1px dashed #f1c6d4;display:flex;gap:.7rem;align-items:flex-start}
+.lista li{padding:.7rem .4rem;border-bottom:1px dashed #cfd3da;display:flex;gap:.7rem;align-items:flex-start}
 .lista li:last-child{border:none}
 .lista li:before{content:"🌸"}
 .check li{cursor:pointer;user-select:none}
@@ -59,7 +59,7 @@ main{max-width:1100px;margin:0 auto;padding:2rem 1.1rem 4rem}
 .check li.done:before{content:"✅"}
 .check li.done span{text-decoration:line-through;opacity:.55}
 /* RAZONES */
-.razon{background:linear-gradient(135deg,#fff,#ffeaf1);border-radius:18px;padding:1.2rem;box-shadow:var(--sombra);text-align:center;cursor:pointer;transition:.3s;min-height:110px;display:flex;flex-direction:column;justify-content:center}
+.razon{background:linear-gradient(135deg,#fff,#eceef1);border-radius:18px;padding:1.2rem;box-shadow:var(--sombra);text-align:center;cursor:pointer;transition:.3s;min-height:110px;display:flex;flex-direction:column;justify-content:center}
 .razon:hover{transform:translateY(-4px) rotate(-1deg)}
 .razon b{font-family:'Dancing Script';font-size:2rem;color:var(--rosa)}
 .razon .txt{display:none;font-size:.95rem}
@@ -69,17 +69,8 @@ main{max-width:1100px;margin:0 auto;padding:2rem 1.1rem 4rem}
 details{background:var(--card);border-radius:16px;padding:1rem 1.3rem;margin-bottom:.9rem;box-shadow:var(--sombra)}
 summary{cursor:pointer;font:600 1.05rem 'Poppins';color:var(--vino)}
 details p{margin-top:.8rem;line-height:1.8;white-space:pre-line}
-/* GALERIA */
-.foto{aspect-ratio:1;border-radius:18px;background:linear-gradient(135deg,#ffd1df,#e7c6ff);display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:1rem;box-shadow:var(--sombra);overflow:hidden;position:relative;color:var(--vino);font-size:.9rem}
-.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.foto .cap{position:absolute;bottom:0;left:0;right:0;background:#0000009a;color:#fff;padding:.5rem;font-size:.85rem}
-.foto .em{font-size:2.6rem}
-/* MUSICA */
-.cancion{display:flex;gap:1rem;align-items:center;background:var(--card);padding:.9rem 1.2rem;border-radius:14px;margin-bottom:.7rem;box-shadow:var(--sombra)}
-.cancion .n{font-size:1.5rem;color:var(--rosa);font-weight:600;width:2rem}
-.cancion small{color:#8a6a75}
 /* QUIZ */
-.opt{display:block;width:100%;text-align:left;background:#fff;border:2px solid #f6c8d7;border-radius:12px;padding:.8rem 1rem;margin:.5rem 0;cursor:pointer;font:400 1rem 'Poppins';transition:.2s}
+.opt{display:block;width:100%;text-align:left;background:#fff;border:2px solid #c7ccd4;border-radius:12px;padding:.8rem 1rem;margin:.5rem 0;cursor:pointer;font:400 1rem 'Poppins';transition:.2s}
 .opt:hover{border-color:var(--rosa)}
 .opt.ok{background:#d9f7e4;border-color:#4cbf7d}
 .opt.bad{background:#ffdcdc;border-color:#e46}
@@ -94,7 +85,7 @@ details p{margin-top:.8rem;line-height:1.8;white-space:pre-line}
 /* CORAZONES FLOTANTES */
 .fl{position:fixed;bottom:-40px;pointer-events:none;z-index:1;animation:sube linear forwards;opacity:.7}
 @keyframes sube{to{transform:translateY(-110vh) rotate(40deg);opacity:0}}
-footer{text-align:center;padding:2rem 1rem;color:#8a6a75;font-size:.9rem}
+footer{text-align:center;padding:2rem 1rem;color:#6c717c;font-size:.9rem}
 </style>
 </head>
 <body>
@@ -111,7 +102,7 @@ footer{text-align:center;padding:2rem 1rem;color:#8a6a75;font-size:.9rem}
   <div class="hero">
     <p style="font-size:1rem;letter-spacing:3px;text-transform:uppercase;color:var(--rosa)">Esta página es solo para ti</p>
     <div class="big">Victoria</div>
-    <p>Hice este rincón del internet solo para ti, para recordarte lo especial que eres, lo mucho que vales y todo lo bonito que traes a la vida de quienes te rodean. Recórrela con calma, pestaña por pestaña. 💖</p>
+    <p>Hace diez años te conocí, y hoy hice este rincón del internet solo para ti, para recordarte lo especial que eres, lo mucho que vales y todo lo bonito que traes a la vida de quienes te rodean. Recórrela con calma, pestaña por pestaña. 💖</p>
     <button class="btn" onclick="irTab('razones')">Empieza por aquí ✨</button>
     <button class="btn" onclick="irTab('sorpresa')">Una sorpresa 🎁</button>
     <div class="counter" id="contador"></div>
@@ -124,7 +115,7 @@ footer{text-align:center;padding:2rem 1rem;color:#8a6a75;font-size:.9rem}
         <li>Nuestra historia en una línea de tiempo</li>
         <li>Razones por las que eres increíble</li>
         <li>Cartas para abrir cuando las necesites</li>
-        <li>Fotos, canciones, planes y sueños</li>
+        <li>Planes y sueños</li>
         <li>Un quiz, frases y una sorpresa final</li>
       </ul>
     </div>
@@ -203,20 +194,6 @@ footer{text-align:center;padding:2rem 1rem;color:#8a6a75;font-size:.9rem}
   <div id="cartasList"></div>
 </section>
 
-<!-- GALERIA -->
-<section class="tab" id="galeria">
-  <h2>Galería de recuerdos</h2>
-  <p class="sub">Un álbum para guardar los mejores momentos</p>
-  <div class="grid" id="galGrid" style="grid-template-columns:repeat(auto-fill,minmax(210px,1fr))"></div>
-</section>
-
-<!-- MUSICA -->
-<section class="tab" id="musica">
-  <h2>Su playlist</h2>
-  <p class="sub">Canciones que me recuerdan a ti</p>
-  <div style="max-width:760px;margin:auto" id="songs"></div>
-</section>
-
 <!-- PLANES -->
 <section class="tab" id="planes">
   <h2>Planes y sueños</h2>
@@ -244,7 +221,7 @@ footer{text-align:center;padding:2rem 1rem;color:#8a6a75;font-size:.9rem}
     <p>Querida Victoria:</p><br>
     <p>Hay personas que llegan y, sin hacer ruido, cambian todo. Tú eres una de ellas. Tu forma de ser, tu luz y tu corazón hacen que quienes estamos cerca tengamos ganas de ser mejores.</p><br>
     <p>Quise hacerte este pequeño rincón en internet porque mereces algo que no se acabe con un mensaje ni se pierda en una conversación. Algo que puedas abrir cuando quieras y recordar que eres valiosa, que eres querida y que tu presencia importa más de lo que imaginas.</p><br>
-    <p>Gracias por ser como eres. Que la vida te regale siempre muchas razones para sonreír, tanto como las que tú nos das a los demás.</p><br>
+    <p>Gracias por estos diez años y por ser como eres. Que la vida te regale siempre muchas razones para sonreír, tanto como las que tú nos das a los demás.</p><br>
     <p class="firma">Con cariño 💖</p>
   </div>
 </section>
@@ -256,7 +233,7 @@ footer{text-align:center;padding:2rem 1rem;color:#8a6a75;font-size:.9rem}
   <div class="card" style="max-width:600px;margin:auto">
     <div id="bigheart" onclick="sorpresa()">💖</div>
     <div id="msgsorp">Toca el corazón y lee 💌</div>
-    <p style="font-size:.85rem;color:#8a6a75;margin-top:1rem">Toques: <b id="toques">0</b></p>
+    <p style="font-size:.85rem;color:#6c717c;margin-top:1rem">Toques: <b id="toques">0</b></p>
   </div>
 </section>
 
@@ -266,21 +243,21 @@ footer{text-align:center;padding:2rem 1rem;color:#8a6a75;font-size:.9rem}
 
 <script>
 /* ============ PERSONALIZA AQUÍ ============ */
-const FECHA_INICIO = new Date("2025-01-01T00:00:00"); // Cambia por la fecha que quieras contar
-const ETIQUETA_CONTADOR = "Tiempo desde que todo empezó";
+const FECHA_INICIO = new Date("2016-11-17T00:00:00"); // Hace 10 años que la conozco
+const ETIQUETA_CONTADOR = "Tiempo desde que nos conocemos: más de 10 años";
 
 const TABS = [
   ["inicio","🏠 Inicio"],["historia","📖 Historia"],["razones","💗 Razones"],["amo","🌸 Lo que admiro"],
-  ["cartas","💌 Cartas"],["galeria","📸 Galería"],["musica","🎵 Música"],["planes","✅ Planes"],
+  ["cartas","💌 Cartas"],["planes","✅ Planes"],
   ["quiz","🎯 Quiz"],["carta","✉️ Carta final"],["sorpresa","🎁 Sorpresa"]
 ];
 
 const HISTORIA = [
-  ["Día 1","El comienzo","El día en que nuestros caminos se cruzaron. Quizá no lo sabíamos, pero algo bonito empezaba."],
-  ["Primeras charlas","Conocernos","Descubrir poco a poco cómo eres, qué te hace reír y qué te importa."],
+  ["Hace 10 años","El día que te conocí","Hace diez años nuestros caminos se cruzaron. Quizá no lo sabíamos, pero algo bonito empezaba."],
+  ["Los primeros años","Conocernos","Descubrir poco a poco cómo eres, qué te hace reír y qué te importa."],
   ["Un momento inolvidable","Ese recuerdo","Hay momentos que uno guarda para siempre, y varios tienen tu nombre."],
   ["Una risa compartida","Reír juntos","Las mejores historias empiezan con una risa sin motivo."],
-  ["Hoy","Aquí y ahora","Y sigue habiendo mucho por vivir. Lo mejor aún no ha llegado."]
+  ["Hoy","Diez años después","Una década conociéndote, y sigue habiendo mucho por vivir. Gracias por todos estos años."]
 ];
 
 const RAZONES = [
@@ -298,20 +275,6 @@ const CARTAS = [
   ["Ábrela cuando necesites una sonrisa 😊","Ahora mismo, en algún lugar, alguien está pensando en lo increíble que eres.\nSonríe, aunque sea un poquito. Ya está, ya funcionó."],
   ["Ábrela en tu cumpleaños 🎂","Feliz cumpleaños, Victoria. Que este nuevo año te traiga salud, amor, paz y muchas victorias.\nGracias por existir y por hacer el mundo un lugar mejor."],
   ["Ábrela cuando dudes de ti 👑","Mírate con los ojos con que te miran quienes te quieren. Ahí hay una mujer valiosa, valiente y hermosa.\nNo dejes que un mal momento te haga olvidar quién eres."]
-];
-
-const GALERIA = [
-  /* Para poner tus fotos: sube las imágenes a la carpeta "fotos" y pon el nombre, así:
-     {src:"fotos/foto1.jpg", cap:"Un día especial"} */
-  {emoji:"📷",cap:"Aquí va tu primera foto"},{emoji:"🌅",cap:"Un atardecer juntos"},{emoji:"🍕",cap:"Una comida inolvidable"},
-  {emoji:"🎉",cap:"Un día de celebración"},{emoji:"🌸",cap:"Un paseo bonito"},{emoji:"😂",cap:"Cuando nos reímos sin parar"},
-  {emoji:"🎬",cap:"Noche de películas"},{emoji:"💞",cap:"Mi foto favorita"}
-];
-
-const CANCIONES = [
-  ["Canción 1","Artista · Escribe aquí el motivo"],["Canción 2","Artista · Esta me recuerda a ti"],
-  ["Canción 3","Artista · Para días tranquilos"],["Canción 4","Artista · Para bailar"],
-  ["Canción 5","Artista · Para cuando estés feliz"],["Canción 6","Artista · Para cuando me extrañes"]
 ];
 
 const CITAS  = ["Cena romántica","Picnic en el parque","Ver el atardecer","Noche de pelis y palomitas","Ir a bailar","Cocinar juntos","Tarde de helado","Sesión de fotos"];
@@ -372,12 +335,6 @@ $("#timeline").innerHTML=HISTORIA.map(([f,t,d])=>`<div class="t-item card"><smal
 $("#razonesGrid").innerHTML=RAZONES.map((r,i)=>`<div class="razon" onclick="this.classList.toggle('open')"><b>#${i+1}</b><span class="hint">toca 💗</span><span class="txt">${r}</span></div>`).join("");
 /* CARTAS */
 $("#cartasList").innerHTML=CARTAS.map(([t,c])=>`<details><summary>${t}</summary><p>${c}</p></details>`).join("");
-/* GALERIA */
-$("#galGrid").innerHTML=GALERIA.map(g=>g.src
-  ?`<div class="foto"><img src="${g.src}" alt="${g.cap}" loading="lazy"><div class="cap">${g.cap}</div></div>`
-  :`<div class="foto"><div class="em">${g.emoji}</div><div>${g.cap}</div></div>`).join("");
-/* MUSICA */
-$("#songs").innerHTML=CANCIONES.map(([t,s],i)=>`<div class="cancion"><div class="n">${i+1}</div><div><b>${t}</b><br><small>${s}</small></div></div>`).join("");
 /* CHECKLISTS (se guardan en el navegador) */
 function checklist(id,items){
   const key="vic_"+id;let saved=[];
