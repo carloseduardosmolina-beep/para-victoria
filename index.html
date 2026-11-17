@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Para Victoria 💖</title>
+<meta name="description" content="Una página hecha solo para Victoria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rosa:#e8618c; --rosa2:#ff9ebb; --crema:#fff6f8; --vino:#7a1f3d; --oro:#d9a441;
+  --texto:#3b2a31; --card:#ffffffd9; --sombra:0 10px 30px rgba(232,97,140,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:var(--texto);background:linear-gradient(160deg,#fff0f5,#ffe3ec 45%,#fdf2ff);min-height:100vh;overflow-x:hidden}
+h1,h2,h3{font-family:'Dancing Script',cursive;color:var(--vino)}
+h2{font-size:2.6rem;text-align:center;margin-bottom:.4rem}
+.sub{text-align:center;color:#8a6a75;margin-bottom:2rem}
+header{position:sticky;top:0;z-index:50;background:#fffafcee;backdrop-filter:blur(10px);box-shadow:0 2px 14px rgba(0,0,0,.06)}
+.brand{text-align:center;font-family:'Dancing Script',cursive;font-size:1.9rem;color:var(--rosa);padding:.5rem 0 0}
+nav{display:flex;gap:.4rem;overflow-x:auto;padding:.5rem .8rem .7rem;scrollbar-width:none;justify-content:flex-start}
+@media(min-width:1100px){nav{justify-content:center}}
+nav::-webkit-scrollbar{display:none}
+nav button{flex:none;border:none;background:#fff;color:var(--vino);padding:.55rem 1rem;border-radius:999px;font:500 .9rem 'Poppins';cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.07);transition:.25s}
+nav button:hover{transform:translateY(-2px)}
+nav button.active{background:linear-gradient(135deg,var(--rosa),var(--rosa2));color:#fff}
+main{max-width:1100px;margin:0 auto;padding:2rem 1.1rem 4rem}
+.tab{display:none;animation:fade .6s ease}
+.tab.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.card{background:var(--card);border-radius:20px;padding:1.6rem;box-shadow:var(--sombra);margin-bottom:1.4rem}
+.grid{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+/* HERO */
+.hero{text-align:center;padding:3rem 1rem 2rem}
+.hero .big{font-family:'Dancing Script';font-size:clamp(3.4rem,13vw,7rem);background:linear-gradient(135deg,var(--rosa),var(--vino));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.hero p{max-width:620px;margin:1.2rem auto;font-size:1.1rem;color:#6b4a56}
+.btn{display:inline-block;border:none;cursor:pointer;background:linear-gradient(135deg,var(--rosa),var(--rosa2));color:#fff;padding:.8rem 1.6rem;border-radius:999px;font:500 1rem 'Poppins';box-shadow:var(--sombra);transition:.25s;margin:.3rem}
+.btn:hover{transform:scale(1.05)}
+.counter{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem}
+.counter div{background:#fff;border-radius:16px;padding:.9rem 1.1rem;min-width:84px;box-shadow:var(--sombra)}
+.counter b{display:block;font-size:1.9rem;color:var(--rosa)}
+.counter span{font-size:.75rem;color:#8a6a75;text-transform:uppercase;letter-spacing:1px}
+/* TIMELINE */
+.timeline{position:relative;max-width:760px;margin:auto;padding-left:30px}
+.timeline:before{content:"";position:absolute;left:8px;top:0;bottom:0;width:3px;background:linear-gradient(var(--rosa),var(--rosa2));border-radius:3px}
+.t-item{position:relative;margin-bottom:1.4rem}
+.t-item:before{content:"💗";position:absolute;left:-34px;top:12px;font-size:1.1rem;background:var(--crema);border-radius:50%}
+.t-item small{color:var(--rosa);font-weight:600}
+.t-item h3{font-size:1.7rem}
+/* LISTAS */
+.lista{list-style:none}
+.lista li{padding:.7rem .4rem;border-bottom:1px dashed #f1c6d4;display:flex;gap:.7rem;align-items:flex-start}
+.lista li:last-child{border:none}
+.lista li:before{content:"🌸"}
+.check li{cursor:pointer;user-select:none}
+.check li:before{content:"⬜"}
+.check li.done:before{content:"✅"}
+.check li.done span{text-decoration:line-through;opacity:.55}
+/* RAZONES */
+.razon{background:linear-gradient(135deg,#fff,#ffeaf1);border-radius:18px;padding:1.2rem;box-shadow:var(--sombra);text-align:center;cursor:pointer;transition:.3s;min-height:110px;display:flex;flex-direction:column;justify-content:center}
+.razon:hover{transform:translateY(-4px) rotate(-1deg)}
+.razon b{font-family:'Dancing Script';font-size:2rem;color:var(--rosa)}
+.razon .txt{display:none;font-size:.95rem}
+.razon.open .txt{display:block}
+.razon.open .hint{display:none}
+/* CARTAS */
+details{background:var(--card);border-radius:16px;padding:1rem 1.3rem;margin-bottom:.9rem;box-shadow:var(--sombra)}
+summary{cursor:pointer;font:600 1.05rem 'Poppins';color:var(--vino)}
+details p{margin-top:.8rem;line-height:1.8;white-space:pre-line}
+/* GALERIA */
+.foto{aspect-ratio:1;border-radius:18px;background:linear-gradient(135deg,#ffd1df,#e7c6ff);display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:1rem;box-shadow:var(--sombra);overflow:hidden;position:relative;color:var(--vino);font-size:.9rem}
+.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.foto .cap{position:absolute;bottom:0;left:0;right:0;background:#0000009a;color:#fff;padding:.5rem;font-size:.85rem}
+.foto .em{font-size:2.6rem}
+/* MUSICA */
+.cancion{display:flex;gap:1rem;align-items:center;background:var(--card);padding:.9rem 1.2rem;border-radius:14px;margin-bottom:.7rem;box-shadow:var(--sombra)}
+.cancion .n{font-size:1.5rem;color:var(--rosa);font-weight:600;width:2rem}
+.cancion small{color:#8a6a75}
+/* QUIZ */
+.opt{display:block;width:100%;text-align:left;background:#fff;border:2px solid #f6c8d7;border-radius:12px;padding:.8rem 1rem;margin:.5rem 0;cursor:pointer;font:400 1rem 'Poppins';transition:.2s}
+.opt:hover{border-color:var(--rosa)}
+.opt.ok{background:#d9f7e4;border-color:#4cbf7d}
+.opt.bad{background:#ffdcdc;border-color:#e46}
+/* CARTA FINAL */
+.carta{background:#fffdf7;border:1px solid #ead9b6;border-radius:6px;padding:2rem;max-width:720px;margin:auto;box-shadow:0 12px 34px rgba(0,0,0,.12);line-height:1.9;font-size:1.05rem}
+.carta .firma{font-family:'Dancing Script';font-size:2rem;color:var(--rosa);text-align:right}
+/* SORPRESA */
+.sorpresa{text-align:center}
+#bigheart{font-size:6rem;cursor:pointer;display:inline-block;animation:lat 1.3s infinite}
+@keyframes lat{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+#msgsorp{margin-top:1rem;font-size:1.2rem;min-height:3rem;color:var(--vino)}
+/* CORAZONES FLOTANTES */
+.fl{position:fixed;bottom:-40px;pointer-events:none;z-index:1;animation:sube linear forwards;opacity:.7}
+@keyframes sube{to{transform:translateY(-110vh) rotate(40deg);opacity:0}}
+footer{text-align:center;padding:2rem 1rem;color:#8a6a75;font-size:.9rem}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">Victoria ♡</div>
+  <nav id="nav"></nav>
+</header>
+
+<main>
+
+<!-- INICIO -->
+<section class="tab active" id="inicio">
+  <div class="hero">
+    <p style="font-size:1rem;letter-spacing:3px;text-transform:uppercase;color:var(--rosa)">Esta página es solo para ti</p>
+    <div class="big">Victoria</div>
+    <p>Hice este rincón del internet solo para ti, para recordarte lo especial que eres, lo mucho que vales y todo lo bonito que traes a la vida de quienes te rodean. Recórrela con calma, pestaña por pestaña. 💖</p>
+    <button class="btn" onclick="irTab('razones')">Empieza por aquí ✨</button>
+    <button class="btn" onclick="irTab('sorpresa')">Una sorpresa 🎁</button>
+    <div class="counter" id="contador"></div>
+    <p style="font-size:.85rem;margin-top:.6rem" id="contadorLabel"></p>
+  </div>
+
+  <div class="grid">
+    <div class="card"><h3>💌 Qué vas a encontrar</h3>
+      <ul class="lista">
+        <li>Nuestra historia en una línea de tiempo</li>
+        <li>Razones por las que eres increíble</li>
+        <li>Cartas para abrir cuando las necesites</li>
+        <li>Fotos, canciones, planes y sueños</li>
+        <li>Un quiz, frases y una sorpresa final</li>
+      </ul>
+    </div>
+    <div class="card"><h3>🌷 Frase del día</h3>
+      <p id="fraseDia" style="font-size:1.1rem;line-height:1.7;margin-top:.6rem"></p>
+      <button class="btn" onclick="fraseNueva()" style="margin-top:1rem">Otra frase 🔄</button>
+    </div>
+    <div class="card"><h3>⭐ Victoria en datos</h3>
+      <ul class="lista">
+        <li>Nombre: Victoria, que significa triunfo</li>
+        <li>Superpoder: iluminar cualquier lugar</li>
+        <li>Nivel de belleza: infinito</li>
+        <li>Nivel de ternura: peligrosamente alto</li>
+        <li>Estado actual: siendo increíble</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORIA -->
+<section class="tab" id="historia">
+  <h2>Nuestra historia</h2>
+  <p class="sub">Los momentos que hicieron todo esto especial</p>
+  <div class="timeline" id="timeline"></div>
+</section>
+
+<!-- RAZONES -->
+<section class="tab" id="razones">
+  <h2>Razones por las que eres increíble</h2>
+  <p class="sub">Toca cada corazón para descubrirlas</p>
+  <div class="grid" id="razonesGrid"></div>
+</section>
+
+<!-- LO QUE AMO -->
+<section class="tab" id="amo">
+  <h2>Cosas que admiro de ti</h2>
+  <p class="sub">Listas, porque una sola no alcanza</p>
+  <div class="grid">
+    <div class="card"><h3>✨ Tu forma de ser</h3>
+      <ul class="lista">
+        <li>Tu sonrisa que cambia el día</li>
+        <li>Tu manera de escuchar de verdad</li>
+        <li>Tu risa contagiosa</li>
+        <li>Tu fuerza cuando las cosas se ponen difíciles</li>
+        <li>Tu ternura con los pequeños detalles</li>
+        <li>Tu forma de ver lo bonito de la vida</li>
+      </ul></div>
+    <div class="card"><h3>🌼 Pequeños detalles</h3>
+      <ul class="lista">
+        <li>Cómo te emocionas con lo que te gusta</li>
+        <li>Tu mirada cuando estás pensando</li>
+        <li>Cuando cantas aunque nadie te escuche</li>
+        <li>Tu cara cuando algo te sorprende</li>
+        <li>Tu cariño con quienes quieres</li>
+        <li>Cómo hace falta tu voz cuando no estás</li>
+      </ul></div>
+    <div class="card"><h3>👑 Tus virtudes</h3>
+      <ul class="lista">
+        <li>Valiente</li><li>Inteligente</li><li>Auténtica</li><li>Cariñosa</li><li>Trabajadora</li><li>Luchadora</li><li>Hermosa por dentro y por fuera</li>
+      </ul></div>
+    <div class="card"><h3>🍓 Tus gustos favoritos</h3>
+      <ul class="lista">
+        <li>Tu comida favorita: ____________</li>
+        <li>Tu color favorito: ____________</li>
+        <li>Tu flor favorita: ____________</li>
+        <li>Tu película favorita: ____________</li>
+        <li>Tu lugar soñado: ____________</li>
+      </ul></div>
+  </div>
+</section>
+
+<!-- CARTAS -->
+<section class="tab" id="cartas">
+  <h2>Cartas para ti</h2>
+  <p class="sub">Ábrelas cuando las necesites</p>
+  <div id="cartasList"></div>
+</section>
+
+<!-- GALERIA -->
+<section class="tab" id="galeria">
+  <h2>Galería de recuerdos</h2>
+  <p class="sub">Un álbum para guardar los mejores momentos</p>
+  <div class="grid" id="galGrid" style="grid-template-columns:repeat(auto-fill,minmax(210px,1fr))"></div>
+</section>
+
+<!-- MUSICA -->
+<section class="tab" id="musica">
+  <h2>Su playlist</h2>
+  <p class="sub">Canciones que me recuerdan a ti</p>
+  <div style="max-width:760px;margin:auto" id="songs"></div>
+</section>
+
+<!-- PLANES -->
+<section class="tab" id="planes">
+  <h2>Planes y sueños</h2>
+  <p class="sub">Toca para marcar lo que ya cumplimos</p>
+  <div class="grid">
+    <div class="card"><h3>🍽️ Citas pendientes</h3><ul class="lista check" id="citas"></ul></div>
+    <div class="card"><h3>✈️ Lugares por conocer</h3><ul class="lista check" id="viajes"></ul></div>
+    <div class="card"><h3>🌟 Sueños y metas</h3><ul class="lista check" id="suenos"></ul></div>
+    <div class="card"><h3>🎬 Películas por ver</h3><ul class="lista check" id="pelis"></ul></div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="tab" id="quiz">
+  <h2>¿Qué tanto sabes de ti?</h2>
+  <p class="sub">Un quiz divertido con trampa: todas las respuestas son buenas</p>
+  <div class="card" style="max-width:640px;margin:auto" id="quizBox"></div>
+</section>
+
+<!-- CARTA FINAL -->
+<section class="tab" id="carta">
+  <h2>Una carta para Victoria</h2>
+  <p class="sub">Lo que quiero decirte</p>
+  <div class="carta">
+    <p>Querida Victoria:</p><br>
+    <p>Hay personas que llegan y, sin hacer ruido, cambian todo. Tú eres una de ellas. Tu forma de ser, tu luz y tu corazón hacen que quienes estamos cerca tengamos ganas de ser mejores.</p><br>
+    <p>Quise hacerte este pequeño rincón en internet porque mereces algo que no se acabe con un mensaje ni se pierda en una conversación. Algo que puedas abrir cuando quieras y recordar que eres valiosa, que eres querida y que tu presencia importa más de lo que imaginas.</p><br>
+    <p>Gracias por ser como eres. Que la vida te regale siempre muchas razones para sonreír, tanto como las que tú nos das a los demás.</p><br>
+    <p class="firma">Con cariño 💖</p>
+  </div>
+</section>
+
+<!-- SORPRESA -->
+<section class="tab sorpresa" id="sorpresa">
+  <h2>Tu sorpresa</h2>
+  <p class="sub">Toca el corazón</p>
+  <div class="card" style="max-width:600px;margin:auto">
+    <div id="bigheart" onclick="sorpresa()">💖</div>
+    <div id="msgsorp">Toca el corazón y lee 💌</div>
+    <p style="font-size:.85rem;color:#8a6a75;margin-top:1rem">Toques: <b id="toques">0</b></p>
+  </div>
+</section>
+
+</main>
+
+<footer>Hecho con mucho cariño, solo para Victoria 💗</footer>
+
+<script>
+/* ============ PERSONALIZA AQUÍ ============ */
+const FECHA_INICIO = new Date("2025-01-01T00:00:00"); // Cambia por la fecha que quieras contar
+const ETIQUETA_CONTADOR = "Tiempo desde que todo empezó";
+
+const TABS = [
+  ["inicio","🏠 Inicio"],["historia","📖 Historia"],["razones","💗 Razones"],["amo","🌸 Lo que admiro"],
+  ["cartas","💌 Cartas"],["galeria","📸 Galería"],["musica","🎵 Música"],["planes","✅ Planes"],
+  ["quiz","🎯 Quiz"],["carta","✉️ Carta final"],["sorpresa","🎁 Sorpresa"]
+];
+
+const HISTORIA = [
+  ["Día 1","El comienzo","El día en que nuestros caminos se cruzaron. Quizá no lo sabíamos, pero algo bonito empezaba."],
+  ["Primeras charlas","Conocernos","Descubrir poco a poco cómo eres, qué te hace reír y qué te importa."],
+  ["Un momento inolvidable","Ese recuerdo","Hay momentos que uno guarda para siempre, y varios tienen tu nombre."],
+  ["Una risa compartida","Reír juntos","Las mejores historias empiezan con una risa sin motivo."],
+  ["Hoy","Aquí y ahora","Y sigue habiendo mucho por vivir. Lo mejor aún no ha llegado."]
+];
+
+const RAZONES = [
+  "Porque tu sonrisa ilumina cualquier lugar.","Porque eres más fuerte de lo que crees.","Porque tienes un corazón enorme.",
+  "Porque tu risa es el mejor sonido.","Porque eres auténtica, sin fingir nada.","Porque tratas bien a la gente.",
+  "Porque no te rindes aunque cueste.","Porque eres inteligente y lo demuestras.","Porque eres bonita por dentro y por fuera.",
+  "Porque contigo el tiempo se pasa volando.","Porque tienes una forma única de ver el mundo.","Porque tu nombre es Victoria, y naciste para triunfar.",
+  "Porque haces sentir especial a los demás.","Porque cuando hablas, da gusto escucharte.","Porque eres única, no hay otra igual."
+];
+
+const CARTAS = [
+  ["Ábrela cuando estés triste 🌧️","Si estás leyendo esto, quizá hoy no es un buen día. Está bien. Los días grises también pasan.\nRecuerda que eres fuerte, que has superado cosas peores y que no estás sola.\nRespira hondo, toma agua, abraza algo suave y piensa que mañana sale el sol otra vez. Te mereces descansar."],
+  ["Ábrela cuando necesites ánimo 💪","Eres capaz de mucho más de lo que imaginas. Cada paso, aunque sea pequeño, te acerca a lo que sueñas.\nNo te compares con nadie. Tu ritmo es el correcto. Confío en ti, y tú también deberías hacerlo."],
+  ["Ábrela cuando no puedas dormir 🌙","Cierra los ojos, respira lento. Piensa en un lugar tranquilo.\nTodo lo que te preocupa puede esperar a mañana. Esta noche solo toca descansar.\nDulces sueños, Victoria."],
+  ["Ábrela cuando necesites una sonrisa 😊","Ahora mismo, en algún lugar, alguien está pensando en lo increíble que eres.\nSonríe, aunque sea un poquito. Ya está, ya funcionó."],
+  ["Ábrela en tu cumpleaños 🎂","Feliz cumpleaños, Victoria. Que este nuevo año te traiga salud, amor, paz y muchas victorias.\nGracias por existir y por hacer el mundo un lugar mejor."],
+  ["Ábrela cuando dudes de ti 👑","Mírate con los ojos con que te miran quienes te quieren. Ahí hay una mujer valiosa, valiente y hermosa.\nNo dejes que un mal momento te haga olvidar quién eres."]
+];
+
+const GALERIA = [
+  /* Para poner tus fotos: sube las imágenes a la carpeta "fotos" y pon el nombre, así:
+     {src:"fotos/foto1.jpg", cap:"Un día especial"} */
+  {emoji:"📷",cap:"Aquí va tu primera foto"},{emoji:"🌅",cap:"Un atardecer juntos"},{emoji:"🍕",cap:"Una comida inolvidable"},
+  {emoji:"🎉",cap:"Un día de celebración"},{emoji:"🌸",cap:"Un paseo bonito"},{emoji:"😂",cap:"Cuando nos reímos sin parar"},
+  {emoji:"🎬",cap:"Noche de películas"},{emoji:"💞",cap:"Mi foto favorita"}
+];
+
+const CANCIONES = [
+  ["Canción 1","Artista · Escribe aquí el motivo"],["Canción 2","Artista · Esta me recuerda a ti"],
+  ["Canción 3","Artista · Para días tranquilos"],["Canción 4","Artista · Para bailar"],
+  ["Canción 5","Artista · Para cuando estés feliz"],["Canción 6","Artista · Para cuando me extrañes"]
+];
+
+const CITAS  = ["Cena romántica","Picnic en el parque","Ver el atardecer","Noche de pelis y palomitas","Ir a bailar","Cocinar juntos","Tarde de helado","Sesión de fotos"];
+const VIAJES = ["Una playa tranquila","Una ciudad con historia","Las montañas","Un pueblo mágico","Ese lugar con el que sueñas"];
+const SUENOS = ["Cumplir todas tus metas","Aprender algo nuevo","Tener tu espacio ideal","Viajar mucho","Ser feliz siempre"];
+const PELIS  = ["Una comedia romántica","Una película de misterio","Un clásico","Una animada","La que tú elijas"];
+
+const FRASES = [
+  "Tú no necesitas ser perfecta para ser extraordinaria.","Eres el tipo de persona que hace que el mundo se vea mejor.",
+  "Hoy es un buen día para recordar lo valiosa que eres.","Tu luz no se apaga porque otros no la vean.",
+  "Victoria no es solo tu nombre, es tu destino.","Cada día contigo cerca es un regalo.",
+  "Mereces todo lo bonito que das a los demás.","Sonríe: eso te queda preciosísimo."
+];
+
+const MENSAJES = [
+  "Eres increíble 💖","Gracias por existir 🌸","Tu sonrisa vale oro ✨","Hoy y siempre, tú puedes 👑",
+  "Eres muy especial 🌷","Qué suerte la de quien te conoce 🍀","Nunca dejes de brillar 🌟","Te mereces lo mejor 💐",
+  "Eres mi persona favorita para sonreír 😊","Esta página es tuya, como tú eres de especial 💌"
+];
+
+const QUIZ = [
+  ["¿Cómo se describe mejor a Victoria?",["Luz","Fuerza","Ternura","Todas las anteriores"],3],
+  ["¿Qué significa el nombre Victoria?",["Triunfo","Alegría","Princesa","Estrella"],0],
+  ["¿Qué tan especial eres?",["Mucho","Muchísimo","Demasiado","Incalculable"],3],
+  ["¿Quién merece cosas bonitas hoy?",["Todos","Nadie","Victoria","Victoria, sin duda"],3]
+];
+/* ============ FIN PERSONALIZACIÓN ============ */
+
+const $ = s => document.querySelector(s);
+
+/* NAV */
+const nav = $("#nav");
+TABS.forEach(([id,label])=>{
+  const b=document.createElement("button");b.textContent=label;b.dataset.id=id;
+  b.onclick=()=>irTab(id);nav.appendChild(b);
+});
+function irTab(id){
+  document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("active",t.id===id));
+  document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("active",b.dataset.id===id));
+  window.scrollTo({top:0,behavior:"smooth"});
+  history.replaceState(null,"","#"+id);
+  corazones(8);
+}
+/* CONTADOR */
+function tick(){
+  let d=Math.max(0,Date.now()-FECHA_INICIO);
+  const dias=Math.floor(d/864e5),h=Math.floor(d/36e5)%24,m=Math.floor(d/6e4)%60,s=Math.floor(d/1e3)%60;
+  $("#contador").innerHTML=[[dias,"días"],[h,"horas"],[m,"min"],[s,"seg"]].map(([n,l])=>`<div><b>${n}</b><span>${l}</span></div>`).join("");
+}
+$("#contadorLabel").textContent=ETIQUETA_CONTADOR;
+tick();setInterval(tick,1000);
+/* FRASES */
+function fraseNueva(){$("#fraseDia").textContent="“"+FRASES[Math.floor(Math.random()*FRASES.length)]+"”"}
+fraseNueva();
+/* HISTORIA */
+$("#timeline").innerHTML=HISTORIA.map(([f,t,d])=>`<div class="t-item card"><small>${f}</small><h3>${t}</h3><p>${d}</p></div>`).join("");
+/* RAZONES */
+$("#razonesGrid").innerHTML=RAZONES.map((r,i)=>`<div class="razon" onclick="this.classList.toggle('open')"><b>#${i+1}</b><span class="hint">toca 💗</span><span class="txt">${r}</span></div>`).join("");
+/* CARTAS */
+$("#cartasList").innerHTML=CARTAS.map(([t,c])=>`<details><summary>${t}</summary><p>${c}</p></details>`).join("");
+/* GALERIA */
+$("#galGrid").innerHTML=GALERIA.map(g=>g.src
+  ?`<div class="foto"><img src="${g.src}" alt="${g.cap}" loading="lazy"><div class="cap">${g.cap}</div></div>`
+  :`<div class="foto"><div class="em">${g.emoji}</div><div>${g.cap}</div></div>`).join("");
+/* MUSICA */
+$("#songs").innerHTML=CANCIONES.map(([t,s],i)=>`<div class="cancion"><div class="n">${i+1}</div><div><b>${t}</b><br><small>${s}</small></div></div>`).join("");
+/* CHECKLISTS (se guardan en el navegador) */
+function checklist(id,items){
+  const key="vic_"+id;let saved=[];
+  try{saved=JSON.parse(localStorage.getItem(key)||"[]")}catch(e){}
+  const ul=$("#"+id);
+  items.forEach((t,i)=>{
+    const li=document.createElement("li");li.innerHTML=`<span>${t}</span>`;
+    if(saved.includes(i))li.classList.add("done");
+    li.onclick=()=>{li.classList.toggle("done");
+      const arr=[...ul.children].map((x,j)=>x.classList.contains("done")?j:-1).filter(j=>j>=0);
+      try{localStorage.setItem(key,JSON.stringify(arr))}catch(e){}
+      if(li.classList.contains("done"))corazones(10);};
+    ul.appendChild(li);
+  });
+}
+checklist("citas",CITAS);checklist("viajes",VIAJES);checklist("suenos",SUENOS);checklist("pelis",PELIS);
+/* QUIZ */
+let qi=0,pts=0;
+function quiz(){
+  const box=$("#quizBox");
+  if(qi>=QUIZ.length){box.innerHTML=`<h3 style="font-size:2rem">¡Terminaste! 🎉</h3><p style="margin:1rem 0">Acertaste ${pts} de ${QUIZ.length}. Pero la verdad es que ya ganaste: eres Victoria. 👑</p><button class="btn" onclick="qi=0;pts=0;quiz()">Repetir</button>`;corazones(25);return;}
+  const [q,o,c]=QUIZ[qi];
+  box.innerHTML=`<small>Pregunta ${qi+1} de ${QUIZ.length}</small><h3 style="font-size:1.8rem;margin:.4rem 0">${q}</h3>`+
+    o.map((t,i)=>`<button class="opt" data-i="${i}">${t}</button>`).join("");
+  box.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{
+    const i=+b.dataset.i;box.querySelectorAll(".opt").forEach(x=>x.onclick=null);
+    b.classList.add(i===c?"ok":"bad");if(i===c)pts++;else box.querySelectorAll(".opt")[c].classList.add("ok");
+    setTimeout(()=>{qi++;quiz()},900);
+  });
+}
+quiz();
+/* SORPRESA */
+let toques=0;
+function sorpresa(){
+  toques++;$("#toques").textContent=toques;
+  $("#msgsorp").textContent=MENSAJES[(toques-1)%MENSAJES.length];
+  corazones(18);
+}
+/* CORAZONES */
+function corazones(n){
+  const set=["💖","💗","💕","🌸","✨","💘"];
+  for(let i=0;i<n;i++){
+    const e=document.createElement("div");e.className="fl";e.textContent=set[Math.floor(Math.random()*set.length)];
+    e.style.left=Math.random()*100+"vw";e.style.fontSize=(16+Math.random()*24)+"px";
+    e.style.animationDuration=(3+Math.random()*3)+"s";e.style.animationDelay=(Math.random()*.6)+"s";
+    document.body.appendChild(e);setTimeout(()=>e.remove(),7000);
+  }
+}
+/* abrir pestaña desde la URL */
+const h=location.hash.slice(1);
+irTab(TABS.some(t=>t[0]===h)?h:"inicio");
+</script>
+</body>
+</html>
